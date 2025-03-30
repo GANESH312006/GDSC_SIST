@@ -13,3 +13,10 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", showOnScroll);
   showOnScroll();
 });
+
+const startTime = performance.now();
+
+window.onload = function () {
+  const endTime = performance.now();
+  console.log("Page Load Time: " + (endTime - startTime) + "ms");
+};

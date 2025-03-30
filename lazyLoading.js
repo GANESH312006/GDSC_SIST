@@ -43,10 +43,8 @@ const showSection = (entries) => {
 
   if (!entry.isIntersecting) return;
 
-  // To remove the class for the elem event 3 - event5
-  entry.target.classList.contains("event6")
-    ? entry.target.classList.remove("reveal-section-hidden6")
-    : entry.target.classList.remove("reveal-section-hidden");
+  // To remove the class for the elem event 3 - event6
+  entry.target.classList.remove("reveal-section-hidden");
 };
 
 const sectionObserver = new IntersectionObserver(showSection, {

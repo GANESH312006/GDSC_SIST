@@ -1,5 +1,7 @@
 'use strict';
 
+// This file contains the logic for card hovering.
+
 const images = document.querySelectorAll('.card');
 
 images.forEach(function (img) {

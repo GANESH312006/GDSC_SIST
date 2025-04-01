@@ -1,5 +1,7 @@
 'use strict';
 
+// This file contains logic for lazyloading of the images.
+
 const lazyImg = document.querySelectorAll('.lazy-img');
 const imgSection = document.querySelectorAll('.slide-content');
 

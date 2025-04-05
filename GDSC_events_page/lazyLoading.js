@@ -2,10 +2,14 @@
 
 // This file contains logic for lazyloading of the images.
 
+// Selecting img for lazy loading
 const lazyImg = document.querySelectorAll('.lazy-img');
-const imgSection = document.querySelectorAll('.slide-content');
+const lazyImgContainer = document.querySelectorAll('.lazy-img-container');
 
 const scrollBtn = document.querySelector('.scroll-to-top');
+
+// Revealing the section
+const imgSection = document.querySelectorAll('.reveal-section');
 
 scrollBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -27,10 +31,19 @@ const showImg = (entries, observer) => {
   entry.target.classList.remove('lazy-img');
   entry.target.classList.add('loaded');
 
+  entry.target
+    .closest('.lazy-img-container')
+    .classList.remove('lazy-img-container');
+
   observer.unobserve(entry.target);
 };
 
 const imageObs = new IntersectionObserver(showImg, {
+  root: null,
+  threshold: 0.7,
+});
+
+const lazyImgContainerObs = new IntersectionObserver(showImg, {
   root: null,
   threshold: 0.7,
 });
